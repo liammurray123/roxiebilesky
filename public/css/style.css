@@ -1,8 +1,15 @@
-/* this file is loaded by index.html and styles the page */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+@font-face{
+  src: url(/public/fonts/Rawkbrush.otf);
+  font-family: 'BrushFont';
+}
+
 :root {
   --TextColor: black;
   --BackgroundColor: white;
   --GalaxyGradient: linear-gradient(90deg, rgba(0,100,102,1) 0%, rgba(6,90,96,1) 10%, rgba(11,82,91,1) 20%, rgba(20,69,82,1) 30%, rgba(27,58,75,1) 40%, rgba(33,47,69,1) 50%, rgba(39,38,64,1) 60%, rgba(49,34,68,1) 70%, rgba(62,31,71,1) 80%, rgba(77,25,77,1) 90%);
+  --BodyFont: 'Poppins', sans-serif;
+  --BrushFont: 'BrushFont';
 }
 
 * {
@@ -13,7 +20,7 @@
 
 body {
   background-color: var(--BackgroundColor);
-  font-family: sans-serif;
+  font-family: var(--BodyFont);
   }
 
 section {
@@ -31,6 +38,7 @@ section#header div#title {
   background-color: var(--BackgroundColor);
 }
 section#header div#title h1 {
+  font-family: var(--BrushFont);
   color: green;
   position: absolute;
   top: 50%;
