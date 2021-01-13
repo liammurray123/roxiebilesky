@@ -1,19 +1,43 @@
 /* this file is loaded by index.html and styles the page */
 :root {
-  --TextColor: white;
-  --GalaxyGradient: linear-gradient(90deg, hsla(181, 100%, 20%, 1) 0%, hsla(184, 88%, 20%, 1) 0.1%, hsla(187, 78%, 20%, 1) 0.2%, hsla(193, 61%, 20%, 1) 0.3%, hsla(201, 47%, 20%, 1) 0.4%, hsla(217, 35%, 20%, 1) 0.5%, hsla(242, 25%, 20%, 1) 0.6%, hsla(266, 33%, 20%, 1) 0.7%, hsla(287, 39%, 20%, 1) 0.8%, hsla(300, 51%, 20%, 1) 0.9%);
+  --TextColor: black;
+  --BackgroundColor: white;
+  --GalaxyGradient: linear-gradient(90deg, rgba(0,100,102,1) 0%, rgba(6,90,96,1) 10%, rgba(11,82,91,1) 20%, rgba(20,69,82,1) 30%, rgba(27,58,75,1) 40%, rgba(33,47,69,1) 50%, rgba(39,38,64,1) 60%, rgba(49,34,68,1) 70%, rgba(62,31,71,1) 80%, rgba(77,25,77,1) 90%);
 }
+
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  background-color: var(--GalaxyGradient);
+  background-color: var(--BackgroundColor);
   font-family: sans-serif;
-  margin: 2em 1em;
-  line-height: 1.5em;
-}
+  }
 
+section {
+  height: 100vh;
+/*   background-color: red; */
+}
+section#header {
+  background-image: var(--GalaxyGradient);
+}
+section#header div#title {
+  clip-path: polygon(40% 0, 100% 0%, 60% 100%, 0% 100%);
+  height: 100vh;
+  width: 100vw;
+  padding: 2vh;
+  background-color: var(--BackgroundColor);
+}
+section#header div#title h1 {
+  color: green;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+/*   mix-blend-mode: screen; */
+}
 footer {
   margin-top: 3em;
   padding-top: 1.5em;
