@@ -1,0 +1,21 @@
+/* this file is loaded by index.html and styles the page */
+:root {
+  --TextColor: white;
+  --GalaxyGradient: linear-gradient(90deg, hsla(181, 100%, 20%, 1) 0%, hsla(184, 88%, 20%, 1) 0.1%, hsla(187, 78%, 20%, 1) 0.2%, hsla(193, 61%, 20%, 1) 0.3%, hsla(201, 47%, 20%, 1) 0.4%, hsla(217, 35%, 20%, 1) 0.5%, hsla(242, 25%, 20%, 1) 0.6%, hsla(266, 33%, 20%, 1) 0.7%, hsla(287, 39%, 20%, 1) 0.8%, hsla(300, 51%, 20%, 1) 0.9%);
+}
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--GalaxyGradient);
+  font-family: sans-serif;
+  margin: 2em 1em;
+  line-height: 1.5em;
+}
+
+footer {
+  margin-top: 3em;
+  padding-top: 1.5em;
+  border-top: 1px solid lightgrey;
+}
