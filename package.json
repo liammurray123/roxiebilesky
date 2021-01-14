@@ -12,7 +12,8 @@
   "dependencies": {
     "express": "^4.17.1",
     "gsap": "^3.6.0",
-    "pwa-asset-generator": "^4.1.1"
+    "pwa-asset-generator": "^4.1.1",
+    "stripe": "^8.130.0"
   },
   "engines": {
     "node": "12.x"

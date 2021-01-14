@@ -28,6 +28,14 @@ app.get("/license", (request, response) => {
   response.sendFile(__dirname + "/LICENSE.md");
 });
 
+app.get("/sw.js", (request, response) => {
+  response.sendFile(__dirname + "/sw.js");
+});
+
+app.get("/manifest.json", (request, response) => {
+  response.sendFile(__dirname + "/manifest.json");
+});
+
 app.get("*", (request, response) => {
   response.sendFile(__dirname + "/views/404.html");
 });
@@ -36,12 +44,3 @@ app.get("*", (request, response) => {
 const listener = app.listen(process.env.PORT, () => {
   console.log("Your app is listening on port " + listener.address().port);
 });
-
-// if ("serviceWorker" in navigator) {
-//   window.addEventListener("load", function() {
-//     navigator.serviceWorker
-//       .register("/js/sw.js")
-//       .then(res => console.log("service worker registered"))
-//       .catch(err => console.log("service worker not registered", err))
-//   })
-// }
