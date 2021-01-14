@@ -1,0 +1,10 @@
+{
+  "name": "Roxie Bilesky",
+  "short_name": "Roxie Bilesky",
+  "theme_color": "#006466",
+  "background_color": "#4d194d",
+  "display": "standalone",
+  "orientation": "portrait",
+  "scope": "/",
+  "start_url": "/home"
+}
