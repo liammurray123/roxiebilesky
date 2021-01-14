@@ -30,7 +30,7 @@
 }
 
 * {
-  /*   box-sizing: border-box; */
+    box-sizing: border-box;
   margin: 0;
   padding: 0;
   transition: background-color 2s, background 2s;
@@ -97,7 +97,7 @@ section#newsection card-list {
     display: flex;
     justify-content: center;
     padding: 3rem;
-    overflow-x: scroll;
+    overflow-x: hidden;
 }
 card {
   height: 450px;
@@ -191,6 +191,18 @@ button#darkbutton {
 
 @media screen and (max-width: 600px) {
   card {
-    width: 100%;
+    width: 80%;
   }
+  section#newsection card-list {
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+  }
+  button#backtotop, button#darkbutton {
+   right: 1em;   
+   bottom: 1em;
+  }
+  button#backtotop {
+  display: none;
+}
 }
