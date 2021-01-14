@@ -1,4 +1,4 @@
-const staticCacheName = 'Roxie Bilesky';
+const staticCacheName = 'Roxie Bilesky Art';
 const assets = [
   './scripts.js',
   './style.css',
