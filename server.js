@@ -9,7 +9,7 @@ const app = express();
 // make all the files in 'public' available
 // https://expressjs.com/en/starter/static-files.html
 app.use(express.static("public"));
-
+app.use(express.static('pwaicons'));
 
 // https://expressjs.com/en/starter/basic-routing.html
 app.get("/", (request, response) => {
@@ -39,6 +39,16 @@ app.get("/sw.js", (request, response) => {
 
 app.get("/manifest.json", (request, response) => {
   response.sendFile(__dirname + "/manifest.json");
+});
+
+app.get("/pwaicons/manifest-icon-192.png", (request, response) => {
+  response.sendFile(__dirname + "/pwaicons/manifest-icon-192.png");
+});
+app.get("/pwaicons/apple-icon-180", (request, response) => {
+  response.sendFile(__dirname + "/pwaicons/apple-icon-180.png");
+});
+app.get("/pwaicons/manifest-icon-512.png", (request, response) => {
+  response.sendFile(__dirname + "/pwaicons/manifest-icon-512.png");
 });
 
 app.get("*", (request, response) => {
