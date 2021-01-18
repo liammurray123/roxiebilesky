@@ -1,7 +1,11 @@
 const staticCacheName = 'Roxie Bilesky Art';
 const assets = [
-  './scripts.js',
-  './style.css',
+  '/public/css/style.css',
+  '/public/fonts/Rawkbrush.otf',
+  '/public/js/animations.js',
+  '/public/pwaicons/',
+  '/public/views/index.html',
+  './'
 ];
 
 self.addEventListener('install', evt => {
