@@ -125,13 +125,35 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/ScrollToPlugin.min.js"></script>
   <script src="/js/animation.js" defer=""></script>
 
-<!-- The core Firebase JS SDK is always required and must be listed first -->
-<script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-app.js"></script>
+        
+ 
+ <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-app.js"></script>
 
 <!-- TODO: Add SDKs for Firebase products that you want to use
      https://firebase.google.com/docs/web/setup#available-libraries -->
-<script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-analytics.js"></script>
 
+<script>
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  var firebaseConfig = {
+    apiKey: "AIzaSyCIysimkLwkCodQF8zJVm9bumgm3mOwEXE",
+    authDomain: "shirtsighted-8f59c.firebaseapp.com",
+    projectId: "shirtsighted-8f59c",
+    storageBucket: "shirtsighted-8f59c.appspot.com",
+    messagingSenderId: "717796761674",
+    appId: "1:717796761674:web:49e59c7fea553b709cc6b3",
+    measurementId: "G-KTZX2WKFC7"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
+  <!-- Your custom JS file -->
+  <script src="/js/firestore.js"></script>
+    
 <!--     Allow for PWA -->
 <script>
 if ("serviceWorker" in navigator) {
