@@ -1,27 +1,15 @@
-// Firebase App (the core Firebase SDK) is always required and
-// must be listed before other Firebase SDKs
-var firebase = require("firebase/app");
 
-// Add the Firebase products that you want to use
-require("firebase/auth");
-require("firebase/firestore");
-
-// Your web app's Firebase configuration
-  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-  const config = {
-    apiKey: "AIzaSyCIysimkLwkCodQF8zJVm9bumgm3mOwEXE",
-    authDomain: "shirtsighted-8f59c.firebaseapp.com",
-    projectId: "shirtsighted-8f59c",
-    storageBucket: "shirtsighted-8f59c.appspot.com",
-    messagingSenderId: "717796761674",
-    appId: "1:717796761674:web:49e59c7fea553b709cc6b3",
-    measurementId: "G-KTZX2WKFC7"
-  };
-  firebase.initializeApp(config);
+const firebase = require('firebase/firebase');
 const firestore = firebase.firestore();
-  firebase.analytics();
 
 const docRef = firestore.doc("items/" + title);
+
+
+
+
+
+
+
 const image = document.querySelector("#newItemImage");
 const title = document.querySelector("#newItemText");
 const description = document.querySelector("#newItemDescription");
@@ -45,3 +33,20 @@ savebutton.addEventListener("click", function() {
         console.assert('Upload Failed' + e)
     });
 });
+ 
+// Enable offline capabilities
+firestore.enablePersistence()
+    .then(function() {
+        // Initialize Cloud Firestore through firebase
+        var db = firebase.firestore();
+    })
+    .catch(function(err) {
+        if (err.code == 'failed-precondition') {
+            // Multiple tabs open, persistence can only be enabled in one tab at a a time.
+
+        } else if (err.code == 'unimplemented') {
+            // The current browser does not support all of the
+            // features required to enable persistence
+            // ...
+        }
+    });
