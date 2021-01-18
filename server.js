@@ -44,7 +44,7 @@ app.get("/manifest.json", (request, response) => {
 app.get("/pwaicons/manifest-icon-192.png", (request, response) => {
   response.sendFile(__dirname + "/pwaicons/manifest-icon-192.png");
 });
-app.get("/pwaicons/apple-icon-180", (request, response) => {
+app.get("/pwaicons/apple-icon-180.png", (request, response) => {
   response.sendFile(__dirname + "/pwaicons/apple-icon-180.png");
 });
 app.get("/pwaicons/manifest-icon-512.png", (request, response) => {
