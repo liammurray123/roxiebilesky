@@ -3,12 +3,14 @@ const assets = [
   "/manifest.json",
   "/css/style.css",
   "/fonts/Rawkbrush.otf",
-  "/js/animations.js",
+  "/js/animation.js",
   "/js/firestore.js",
   "/js/topnav.js",
+  "/pwaicons/",
   "/pwaicons/apple-icon-180.png",
   "/pwaicons/manifest-icon-192.png",
   "/pwaicons/manifest-icon-512.png",
+  "/views/offline.html",
   "/views/index.html",
   "/views/404.html",
   "https://static2.sharepointonline.com/files/fabric/office-ui-fabric-core/11.0.0/css/fabric.min.css",
@@ -45,3 +47,4 @@ self.addEventListener("fetch", evt => {
     })
   );
 });
+
