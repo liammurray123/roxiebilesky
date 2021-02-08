@@ -97,11 +97,13 @@ section#newsection card-list {
     display: flex;
     justify-content: center;
     padding: 3rem;
+    
     overflow-x: hidden;
 }
 card {
   height: 450px;
   width: 300px;
+  margin: 3em;
   border-radius: 16px;
   background-color: var(--BackgroundColor);
   color: var(--TextColor);
