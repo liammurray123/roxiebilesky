@@ -13,6 +13,7 @@
     "express": "^4.17.1",
     "gsap": "^3.6.0",
     "nodemailer": "^6.4.17",
+    "body-parser": "^1.19.0",
     "pwa-asset-generator": "^4.1.1",
     "stripe": "^8.131.0"
   },
