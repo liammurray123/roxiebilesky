@@ -9,6 +9,7 @@ const nodemailer = require("nodemailer");
 var bodyParser = require("body-parser");
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+
 // make all the files in 'public' available
 // https://expressjs.com/en/starter/static-files.html
 app.use(express.static("public"));
@@ -21,10 +22,6 @@ app.get("/", (request, response) => {
 
 app.get("/home", (request, response) => {
   response.sendFile(__dirname + "/views/index.html");
-});
-
-app.get("/admin", (request, response) => {
-  response.sendFile(__dirname + "/views/admin.html");
 });
 
 
@@ -58,41 +55,52 @@ app.get("*", (request, response) => {
   response.sendFile(__dirname + "/views/404.html");
 });
 
-// POST route from contact form
-app.post('/contact', (req, res) => {
+// async..await is not allowed in global scope, must use a wrapper
+app.post("/", function(req, res) {
+  
+  const smtpTransport = nodemailer.createTransport({
+      host: "smtp-mail.outlook.com",
+      port: 587,
+      auth: {
+        user: 'liam.murray123@outlook.com',
+        pass: 'Daisy1868',
+      },
+    });
+    
 
-  // Instantiate the SMTP server
-  const smtpTrans = nodemailer.createTransport({
-    host: 'smtp-mail.outlook.com',
-    port: 465,
-    secure: true,
-    auth: {
-      user: 'liam.murray123@icloud.com',
-      pass: 'Daisy1868'
-    }
-  })
+  const mailContent = {
+    from: "liam.murray123@outlook.com",
+    to: "liam.murray123@outlook.com",
+    subject: `${req.body.name} contacted you`,
+    generateTextFromHTML: true,
+    html: `<b>Name</b>: ${req.body.name}<br>
+<b>Email</b>: ${req.body.email}<br><br>
+<b>Message</b>: ${req.body.message}`
+  };
 
-  // Specify what the email will look like
-  const mailOpts = {
-    from: 'Your sender info here', // This is ignored by Gmail
-    to: 'outlook_390775E203B45137@outlook.com',
-    subject: 'New message from contact form at tylerkrys.ca',
-    text: `${req.body.name} (${req.body.email}) says: ${req.body.message}`
-  }
+  smtpTransport.sendMail(mailContent, (err, response) => {
+    //error ? console.log(error) : response.send("Your message has been sent!");
+    if (err) {
+      //response.send("Sorry, this form was not sent. Try again later?");
+      console.error(err);
+      var status = { status: "404" };
+      response.send(status);
+      console.log("Error!");
+    } else {
+      var status = { status: "200" };
+      response.send(status);
+      console.log("Sucess!");
+    }
+    smtpTransport.close();
+  });
 
-  // Attempt to send the email
-  smtpTrans.sendMail(mailOpts, (error, response) => {
-    if (error) {
-      console.log(error);// Show a page indicating failure
-    }
-    else {
-      console.log(response); // Show a page indicating success
-    }
-  })
-})
+  res.redirect("/success");
+});
+
 
 
 // listen for requests :)
-const listener = app.listen(process.env.PORT, () => {
+// change to process.env.PORT after
+const listener = app.listen(5000, () => { 
   console.log("Your app is listening on port " + listener.address().port);
 });
