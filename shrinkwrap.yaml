@@ -1,8 +1,9 @@
 dependencies:
+  body-parser: 1.19.0
   express: 4.17.1
   gsap: 3.6.0
+  nodemailer: 6.4.18
   pwa-asset-generator: 4.1.1
-  stripe: 8.131.1
 packages:
   /@babel/code-frame/7.12.11:
     dependencies:
@@ -870,6 +871,12 @@ packages:
       node: 4.x || >=6.0.0
     resolution:
       integrity: sha512-V4aYg89jEoVRxRb2fJdAg8FHvI7cEyYdVAh94HH0UIK8oJxUfkjlDQN9RbMx+bEjP7+ggMiFRprSti032Oipxw==
+  /nodemailer/6.4.18:
+    dev: false
+    engines:
+      node: '>=6.0.0'
+    resolution:
+      integrity: sha512-ht9cXxQ+lTC+t00vkSIpKHIyM4aXIsQ1tcbQCn5IOnxYHi81W2XOaU66EQBFFpbtzLEBTC94gmkbD4mGZQzVpA==
   /normalize-package-data/2.5.0:
     dependencies:
       hosted-git-info: 2.8.8
@@ -1061,12 +1068,6 @@ packages:
       node: '>=0.6'
     resolution:
       integrity: sha512-VCdBRNFTX1fyE7Nb6FYoURo/SPe62QCaAyzJvUjwRaIsc+NePBEniHlvxFmmX56+HZphIGtV0XeCirBtpDrTyQ==
-  /qs/6.9.6:
-    dev: false
-    engines:
-      node: '>=0.6'
-    resolution:
-      integrity: sha512-TIRk4aqYLNoJUbd+g2lEdz5kLWIuTMRagAXxl78Q0RiVjAOugHmeKNGdd3cwo/ktpf9aL9epCfFqWDEKysUlLQ==
   /quick-lru/4.0.1:
     dev: false
     engines:
@@ -1253,15 +1254,6 @@ packages:
       node: '>=8'
     resolution:
       integrity: sha512-laJTa3Jb+VQpaC6DseHhF7dXVqHTfJPCRDaEbid/drOhgitgYku/letMUqOXFoWV0zIIUbjpdH2t+tYj4bQMRQ==
-  /stripe/8.131.1:
-    dependencies:
-      '@types/node': 14.14.21
-      qs: 6.9.6
-    dev: false
-    engines:
-      node: ^8.1 || >=10.*
-    resolution:
-      integrity: sha512-A5rRVO8pykYAHWpIsLcTKru5KQSUoZ5u9stglmP062Wdlrp/fK3Z6jKOn6Phjoi0m75gaXm7QnFF0Kzlg1EXKw==
   /supports-color/5.5.0:
     dependencies:
       has-flag: 3.0.0
@@ -1412,7 +1404,8 @@ registry: 'https://registry.npmjs.org/'
 shrinkwrapMinorVersion: 9
 shrinkwrapVersion: 3
 specifiers:
+  body-parser: ^1.19.0
   express: ^4.17.1
   gsap: ^3.6.0
+  nodemailer: ^6.4.17
   pwa-asset-generator: ^4.1.1
-  stripe: ^8.131.0
