@@ -62,15 +62,15 @@ app.post("/", function(req, res) {
       host: "smtp-mail.outlook.com",
       port: 587,
       auth: {
-        user: 'liam.murray123@outlook.com',
-        pass: 'Daisy1868',
+        user: process.env.OUTLOOK_USER,
+        pass: process.env.OUTLOOK_PASS,
       },
     });
     
 
   const mailContent = {
-    from: "liam.murray123@outlook.com",
-    to: "liam.murray123@outlook.com",
+    from: process.env.OUTLOOK_USER,
+    to: process.env.ORDER_EMAIL,
     subject: `${req.body.name} contacted you`,
     generateTextFromHTML: true,
     html: `<b>Name</b>: ${req.body.name}<br>
@@ -100,7 +100,6 @@ app.post("/", function(req, res) {
 
 
 // listen for requests :)
-// change to process.env.PORT after
-const listener = app.listen(5000, () => { 
+const listener = app.listen(process.env.PORT, () => { 
   console.log("Your app is listening on port " + listener.address().port);
 });

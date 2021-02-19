@@ -36,6 +36,10 @@
   transition: background-color 2s, background 2s;
 }
 
+*,*:focus,*:hover{
+    outline:none;
+}
+
 body {
   background-color: var(--BackgroundColor);
   font-family: var(--BodyFont);
@@ -216,9 +220,16 @@ button#darkbutton {
   bottom: 2.75em;
 }
 
+form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 form input, form textarea, form button {
   font-family: var(--BodyFont);
   width: 50%;
+  font-size: 1rem;
   margin-top: 2rem;
   border: none;
   border-bottom: 2px solid var(--TextColor);
@@ -226,20 +237,13 @@ form input, form textarea, form button {
   color: var(--TextColor);
   transition: 1s;
 }
-form input:hover, form textarea:hover, form button:hover {
-  font-family: var(--BodyFont);
-  width: 50%;
-  margin-top: 2rem;
-  border: none;
-  border-bottom: 2px solid var(--TextColor);
-  background-color: var(--BackgroundColor);
-  color: var(--TextColor);
-  transition: 1s;
+form button {
+  width: 20%;
 }
-
 form button:hover {
   background-color: var(--TextColor);
   color: var(--BackgroundColor);
+  
 }
 
 @media screen and (max-width: 600px) {
